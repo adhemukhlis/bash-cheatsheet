@@ -63,9 +63,8 @@ du -h -d 1 | sort -rh
    ```
 
    > this command use `24.13.0` version, please check node.js version reference https://nodejs.org/en/about/previous-releases
-
-   > [!TIP]
-   > use `Latest LTS` to install latest long term support version
+> [!TIP] 
+> use `Latest LTS` to install latest long term support version
 
 4. check node.js version
    ```bash
