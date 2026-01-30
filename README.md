@@ -17,6 +17,7 @@ This repository is a collection of bash/terminal commands for easy reference and
 - [NVM](#nvm)
 - [Node.js](#node.js)
 - [PNPM](#pnpm)
+- [Docker](#docker)
 
 ---
 
@@ -94,4 +95,51 @@ du -h -d 1 | sort -rh
 3. check pnpm version
    ```bash
    pnpm --version
+   ```
+
+### Docker
+
+[Docker](https://www.docker.com) is a platform that allows developers to package their applications and dependencies into containers, which can be easily deployed and run on any machine.
+
+1. installation
+   `brew`
+
+   ```bash
+   brew install colima docker docker-buildx
+   ```
+
+   > `colima` as a Linux VM runtime, `docker-buildx` for modern BuildKit features
+
+2. linking
+
+   ```bash
+   mkdir -p ~/.docker/cli-plugins &&
+   ln -sfn $(which docker-buildx) ~/.docker/cli-plugins/docker-buildx &&
+   chmod +x ~/.docker/cli-plugins/docker-buildx
+   ```
+
+3. run colima
+
+   ```bash
+   colima start --cpu 4 --memory 8 --disk 60 --vm-type=vz --mount-type=virtiofs
+   ```
+
+4. docker context
+
+   ```bash
+   docker context create colima --description "Colima" --docker "host=unix://${HOME}/.colima/default/docker.sock" &&
+   docker context use colima
+   ```
+
+5. initialize buildx builder
+
+   ```bash
+   docker buildx create --name builder --driver docker-container --use &&
+   docker buildx inspect --bootstrap
+   ```
+
+6. verification
+   ```bash
+   docker info
+   docker buildx ls
    ```
