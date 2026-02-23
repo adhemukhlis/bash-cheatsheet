@@ -19,6 +19,10 @@ This repository is a collection of bash/terminal commands for easy reference and
 - [PNPM](#pnpm)
 - [Docker](#docker)
 
+### Fixing
+
+- [Invalid Code Signature](#invalid-code-signature)
+
 ---
 
 ## Common
@@ -63,8 +67,8 @@ du -h -d 1 | sort -rh
    ```
 
    > this command use `24.13.0` version, please check node.js version reference https://nodejs.org/en/about/previous-releases
-> [!TIP] 
-> use `Latest LTS` to install latest long term support version
+   > [!TIP]
+   > use `Latest LTS` to install latest long term support version
 
 4. check node.js version
    ```bash
@@ -142,3 +146,11 @@ du -h -d 1 | sort -rh
    docker info
    docker buildx ls
    ```
+
+## FIXING
+
+### Invalid Code Signature
+
+```bash
+sudo codesign --force --deep --sign - /Applications/Antigravity.app
+```
