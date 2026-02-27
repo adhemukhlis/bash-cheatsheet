@@ -87,10 +87,10 @@ du -h -d 1 | sort -rh
 2. install pnpm
 
    ```bash
-   corepack prepare pnpm@10.28.0 --activate
+   corepack prepare pnpm@10.30.3 --activate
    ```
 
-   > this command use `10.28.0` version, please check pnpm version reference https://github.com/pnpm/pnpm/releases
+   > this command use `10.30.3` version, please check pnpm version reference https://github.com/pnpm/pnpm/releases
 
    > [!TIP]
    > use `Latest` to install latest version
@@ -99,6 +99,12 @@ du -h -d 1 | sort -rh
    ```bash
    pnpm --version
    ```
+
+4. upgrade version
+   ```bash
+   corepack use pnpm@10.30.3
+   ```
+   > this command use `10.30.3` version, please check pnpm version reference https://github.com/pnpm/pnpm/releases
 
 ### Docker
 
