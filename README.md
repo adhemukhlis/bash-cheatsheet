@@ -22,6 +22,7 @@ This repository is a collection of bash/terminal commands for easy reference and
 ### Fixing
 
 - [Invalid Code Signature](#invalid-code-signature)
+- [DNS Flush](#dns-flush)
 
 ---
 
@@ -159,4 +160,10 @@ du -h -d 1 | sort -rh
 
 ```bash
 sudo codesign --force --deep --sign - /Applications/Antigravity.app
+```
+
+### DNS Flush
+
+```bash
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 ```
